@@ -48,7 +48,6 @@ public static class InfrastructureServiceCollectionExtensions
 
         services.AddHostedService<GeneratorPollingBackgroundService>();
         return services;
-        return services;
     }
     private static string NormalizeSqliteConnectionString(string connectionString, string contentRootPath)
     {
