@@ -10,12 +10,11 @@ using Genmon.Infrastructure.Initialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
-builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection(JwtOptions.SectionName));
-builder.Services.AddSingleton<JwtTokenIssuer>();
 builder.Services.AddInfrastructure(builder.Configuration, builder.Environment.ContentRootPath);
 builder.Services.AddScoped<GeneratorManagementService>();
 builder.Services.AddScoped<DashboardService>();
@@ -42,6 +41,9 @@ var jwtOptions = new JwtOptions
     SigningKey = jwtSigningKey,
     ExpiresMinutes = configuredJwtOptions.ExpiresMinutes
 };
+
+builder.Services.AddSingleton(Options.Create(jwtOptions));
+builder.Services.AddSingleton<JwtTokenIssuer>();
 
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
