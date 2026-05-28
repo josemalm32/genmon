@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Genmon.Api/Genmon.Api.csproj" />
+    <Project Path="src/Genmon.Application/Genmon.Application.csproj" />
+    <Project Path="src/Genmon.Domain/Genmon.Domain.csproj" />
+    <Project Path="src/Genmon.Infrastructure/Genmon.Infrastructure.csproj" />
+    <Project Path="src/Genmon.Protocols.Abstractions/Genmon.Protocols.Abstractions.csproj" />
+  </Folder>
+</Solution>

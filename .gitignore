@@ -104,3 +104,6 @@ genenv/
 ehthumbs.db
 Thumbs.db
 /.vs
+**/bin/
+**/obj/
+src/Genmon.Next/src/Genmon.Api/App_Data/
