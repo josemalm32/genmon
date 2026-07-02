@@ -104,3 +104,6 @@ genenv/
 ehthumbs.db
 Thumbs.db
 /.vs
+**/bin/
+**/obj/
+**/App_Data/
